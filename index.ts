@@ -39,7 +39,7 @@ const emails : Email[] = [
     to: "eli@gmail.com",
     subject: "Your order has shipped",
     body: "Your package is on the way.",
-    isRead: true,
+    isRead: false,
     timestamp: "2026-06-28",
     bucket: "order",
 },
@@ -54,5 +54,11 @@ const emails : Email[] = [
 },
 ];
 
+// filter to apply
+const jobEmails = emails.filter((email) => email.bucket === "job");
+
+const unReadEmails = emails.filter((email) => email.isRead === false);
+
 // printing app values
-console.log(emails);
+console.log(jobEmails);
+console.log(unReadEmails);
