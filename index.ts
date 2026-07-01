@@ -109,6 +109,24 @@ function findFirstEmailbyBucket(emails: Email[], bucket: EmailType): Email | und
     return emails.find((email) => email.bucket === bucket);
 }
 
+// async function
+async function fetchMockEmails (): Promise<Email[]> {
+    return emails;
+}
+
+async function main() {
+    const fetchedEmails = await fetchMockEmails();
+
+    const fetchedJobEmails = getEmailsByBucket(fetchedEmails, "job");
+
+    console.log("Fetched emails:");
+    console.log(fetchedEmails); 
+}
+
+async function fetchFirstEmailByBucket(bucket: EmailType): Promise<Email | undefined> {
+    return emails.find((email) => email.bucket === bucket); 
+}
+
 // filter to apply
 const jobEmails = getEmailsByBucket(emails, "job");
 const newsletterEmails = getEmailsByBucket(emails, "newsletter");
