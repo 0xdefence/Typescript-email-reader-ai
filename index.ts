@@ -5,7 +5,7 @@ type App = {
     isLoggedIn: boolean;
 }
 
-type EmailType = "job" | "personal" | "newsletter" | "order" | "unknown"
+type EmailType = "job" | "personal" | "newsletter" | "order" | "unknown";
 
 type Email = {
     from: string;
@@ -54,11 +54,22 @@ const emails : Email[] = [
 },
 ];
 
+// function to retrieve emails by bucket
+function getEmailsbyBucket(emails: Email[], bucket: EmailType): Email[] {
+    return emails.filter((email) => email.bucket === bucket);
+}
+
 // filter to apply
 const jobEmails = emails.filter((email) => email.bucket === "job");
-
+const newsletterEmails = emails.filter((email) => email.bucket === "newsletter");
 const unReadEmails = emails.filter((email) => email.isRead === false);
 
 // printing app values
+console.log ("Job emails:");
 console.log(jobEmails);
+
+console.log ("Newsletter emails:");
+console.log(newsletterEmails);
+
+console.log("Unread emails:");
 console.log(unReadEmails);
