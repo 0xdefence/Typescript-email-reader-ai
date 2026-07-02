@@ -1,5 +1,5 @@
 import type { EmailType, EmailCard, Email } from "./types";
-import { emails } from "./mockEmails.ts"
+import { emails } from "./mockEmails"
 import { findFirstEmailByBucket } from "./emailFinders";
 import { createEmailCards } from "./emailMappers";
 

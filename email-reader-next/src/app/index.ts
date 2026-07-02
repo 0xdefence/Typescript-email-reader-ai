@@ -1,7 +1,7 @@
-import { fetchMockEmails, fetchEmailCards } from "./src/emailService";
-import { getEmailsByBucket, getUnreadEmails, getEmailsWithAttachments } from "./src/emailFilters";
-import { findFirstEmailByBucket } from "./src/emailFinders";
-import { createEmailPreviews, getEmailSubjects } from "./src/emailMappers.ts";
+import { fetchMockEmails, fetchEmailCards } from "./lib/email/emailService.js";
+import { getEmailsByBucket, getUnreadEmails, getEmailsWithAttachments } from "./lib/email/emailFilters.js";
+import { findFirstEmailByBucket } from "./lib/email/emailFinders.js";
+import { createEmailPreviews, getEmailSubjects } from "./lib/email/emailMappers.js";
 
 async function main() {
     const fetchedEmails = await fetchMockEmails();

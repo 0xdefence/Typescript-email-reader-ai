@@ -1,4 +1,4 @@
-export type app = {
+export type App = {
     name: string;
     unReadEmails: number;
     isLoggedIn: boolean;
