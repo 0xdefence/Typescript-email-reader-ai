@@ -1,15 +1,19 @@
-export async function GET() {
-    const isWorking = true;
+import { fetchMockEmails } from "@/app/lib/email/emailService";
 
-    if (isWorking) {
+export async function GET() {
+    const emails = await fetchMockEmails();
+
+    if (emails.length > 0) {
     return Response.json({
         success: true,
-        message: "Emails route working"
+        message: "Emails found",
+        data: emails,
     });
 }   else {
     return Response.json({
             success: false,
-            message: "Emails route not working, please check API routes!"
+            message: "No emails found!",
+            data: [],
         });
     }
 }
